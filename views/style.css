@@ -1,0 +1,45 @@
+body {
+  font-family: 'Comfortaa', cursive;
+}
+
+.jumbotron {
+  background-color: #333;
+  margin-bottom: 0px !important;
+}
+
+.header {
+  color: white;
+  font-weight: bold !important;
+}
+
+.trow {
+  margin-top: 10px !important;
+  background-color: #fff !important;
+  border: 1px #ccc !important;
+}
+
+.trow :hover {
+  background-color: #fafafa !important;
+  cursor: pointer;
+}
+
+.title {
+  color: #333 !important;
+  font-size: 13pt !important;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.author {
+  color: #999 !important;
+}
+
+.button {
+  border: none;
+  background: transparent;
+  padding-top: 10px;
+}
+
+.table {
+  padding-top: 0px !important;
+}

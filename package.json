@@ -1,0 +1,32 @@
+{
+  "name": "reigndesign-test",
+  "version": "1.0.0",
+  "description": "a simple web",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "docker-compose up --force-recreate -d&&export DEBUG=reigndesign:*&& nodemon server --exec 'npm run lint && node'",
+    "test": "ava test/",
+    "lint": "standard"
+  },
+  "keywords": [
+    "Express",
+    "Pug"
+  ],
+  "author": "Luis Murillo",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.0",
+    "pug": "^2.0.3",
+    "request": "^2.87.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nodemon": "^1.17.5",
+    "standard": "^11.0.1"
+  }
+}

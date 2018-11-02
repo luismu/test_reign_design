@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
+    style
+      include style.css
+    link(href="https://fonts.googleapis.com/css?family=Comfortaa", rel="stylesheet")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.1.0/css/all.css", integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt", crossorigin="anonymous")
+  body
+    div(class="jumbotron jumbotron-fluid")
+      div(class="container-fluid")
+        h1(class="display-4 header") HN Feed
+        p(class="lead header") We <3 hacker news!
+
+    table(class="table")
+      tbody
+        each val in data
+          tr(class="trow")
+            td
+              if val['story_title']
+                p(class="title")=val['story_title']
+                  span(class="author")= ' - ' + val['author'] + ' -'
+              else
+                p(class="title")=val['title']
+                  span(class="author")= ' - ' + val['author'] + ' -'
+            td
+              p(class="title") #{prettyDate(val['created_at'])}
+            td
+              form(action=`/${val['objectID']}?_method=DELETE`, method="post")
+                button(class="button", type="submit")
+                  i(class="fas fa-trash-alt")
+
+    script(src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js")
